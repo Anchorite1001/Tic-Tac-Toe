@@ -3,7 +3,6 @@ const checkWin = function (arr) {
   let win = 0;
   for (i = 0; i < winOccasion.length; i++) {
     if (winOccasion[i].every (n => arr.includes(n))) {
-      console.log('Win!');
       win ++;
       break
     }
@@ -20,14 +19,21 @@ const ttt = {
   player1: [],
   player2: [],
 
-  currentChoiceP1: function(choice) {
+  turn: true,
+
+  player1Move: function(choice) {
     this.player1.push(choice);
-    checkWin(this.player1);
+    this.turn = !this.turn;
+    if (checkWin(this.player1)) {
+      console.log ('Player1 wins the game!')
+    };
   },
 
-  currentChoiceP2: function(choice) {
+  player2Move: function(choice) {
     this.player2.push(choice);
-    checkWin(this.player2);
-  },
-
+    this.turn = !this.turn;
+    if (checkWin(this.player2)) {
+      console.log ('Player2 wins the game!')
+    };
+  }
 }

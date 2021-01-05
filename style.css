@@ -9,7 +9,7 @@ body {
 
 :root {
   --cell-size: 140px;
-  --token-size: cal(var(--cell-size) * 0.9); //calculate the token size
+  --token-size: 120px; //calculate the token size
 }
 
 container {
@@ -25,6 +25,7 @@ h1 {
   padding-bottom: 50px;
 }
 
+/* styling the game board */
 #board {
   width: 100%;
   height: 100%;
@@ -39,6 +40,7 @@ h1 {
   width: var(--cell-size);
   height: var(--cell-size);
   border: 3px solid white;
+  justify-content:center;
 }
 
 .cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
@@ -52,4 +54,23 @@ h1 {
 }
 .cell:nth-child(7), .cell:nth-child(8), .cell:nth-child(9) {
   border-bottom:none;
+}
+
+/* make the letter token */
+.cell p {
+  display: none;
+}
+
+.cell.player1 > *:first-child{
+  display:block;
+  font-size: 60px;
+  color:white;
+  text-align:center;
+}
+
+.cell.player2 > *:nth-child(2){
+  display:block;
+  font-size: 60px;
+  color: white;
+  text-align:center;
 }
