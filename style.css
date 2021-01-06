@@ -74,3 +74,9 @@ h1 {
   color: white;
   text-align:center;
 }
+
+/* result part */
+h2 {
+  text-align:center;
+  padding-top:20px;
+}

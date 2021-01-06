@@ -14,26 +14,38 @@ const checkWin = function (arr) {
   }
 }
 
-const ttt = {
+const draw = function () {
+  let chosen = game.player1.concat(game.player2);
+  if(game.choices.every(num => {return chosen.includes(num)}) && game.result.length === 0) {
+    game.result = "It's a draw!"
+  }
+}//why directly compare player1+player2 with choices cannot work?
+
+const game = {
   choices: [1, 2, 3, 4, 5, 6, 7, 8, 9],//make every element only be selected once
   player1: [],
   player2: [],
 
   turn: true,
 
+  result: "",
+
   player1Move: function(choice) {
     this.player1.push(choice);
     this.turn = !this.turn;
     if (checkWin(this.player1)) {
-      console.log ('Player1 wins the game!')
+      this.result = 'Player1 wins!';
     };
+    draw()
   },
 
   player2Move: function(choice) {
     this.player2.push(choice);
     this.turn = !this.turn;
     if (checkWin(this.player2)) {
-      console.log ('Player2 wins the game!')
+      this.result = 'Player2 wins!';
     };
-  }
+    draw();
+  },
+
 }
