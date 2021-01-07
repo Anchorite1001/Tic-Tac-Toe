@@ -35,7 +35,7 @@ const takeTurn = function () {
   }));
 
   restart.addEventListener('click', function() {
-    //clear all the changes from logic
+    //clear all the changes from logic file
     game.player1 = [];
     game.player2 = [];
     game.result = "";

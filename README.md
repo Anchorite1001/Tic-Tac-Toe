@@ -5,7 +5,7 @@
 Have a try [here](https://anchorite1001.github.io/project0/). Comments and suggestions are welcome!
 
 <!-- img tag: ![alt-text](url) -->
-![The window of this game](intro.png)
+![The window of this game](./images/intro.png)
 
 <!-- bullet point list + word styling -->
 ## Overview
