@@ -35,11 +35,12 @@ const takeTurn = function () {
   }));
 
   restart.addEventListener('click', function() {
-    //clear all the selected cells from logic
+    //clear all the changes from logic
     game.player1 = [];
     game.player2 = [];
     game.result = "";
     render();
+    game.turn = true;
     //clear all the tokens on gameboard & enable the disabled eventlistener.
     cells.forEach(cell => {
       cell.style.pointerEvents = "";
