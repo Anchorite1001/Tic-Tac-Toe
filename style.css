@@ -22,7 +22,7 @@ h1 {
   text-align:center;
   text-transform: uppercase;
   padding-top:20px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 /* styling the game board */
@@ -41,6 +41,7 @@ h1 {
   height: var(--cell-size);
   border: 3px solid white;
   justify-content:center;
+  align-content: center;
 }
 
 .cell:first-child, .cell:nth-child(2), .cell:nth-child(3) {
@@ -83,7 +84,7 @@ h2 {
 
 .record {
   display:block;
-  padding: 20px 50px;
+  padding: 20px 20px;
   position:relative;
   text-align:left;
 }
@@ -95,4 +96,17 @@ h2 {
 #record2 {
   position:absolute;
   right:50px;
+}
+
+.restart {
+  position:relative;
+  padding:20px;
+  width:75%;
+  margin:0 auto;
+}
+
+#restart {
+  display:block;
+  position:absolute;
+  left:45%;
 }

@@ -11,11 +11,12 @@ const render = function () {
 
 const takeTurn = function () {
   const cells = document.querySelectorAll('.cell');
+  const restart = document.querySelector('#restart');
 
   cells.forEach(cell => cell.addEventListener('click', function () {
     const choice = Number(this.getAttribute('data-id'));
 
-    if (game.result.length != 0) {
+    if (game.result !== "") {
       return
     }
 
@@ -23,7 +24,7 @@ const takeTurn = function () {
       game.player1Move(choice);
       cell.classList.add('player1');
       render();
-      this.style.pointerEvents = 'none';
+      this.style.pointerEvents = 'none';//change it after restart
     } else {
       game.player2Move(choice);
       cell.classList.add('player2');
@@ -33,6 +34,20 @@ const takeTurn = function () {
 
   }));
 
+  restart.addEventListener('click', function() {
+    //clear all the selected cells from logic
+    game.player1 = [];
+    game.player2 = [];
+    game.result = "";
+    render();
+    //clear all the tokens on gameboard
+    cells.forEach(cell => {
+      cell.style.pointerEvents = "";
+      cell.classList.remove('player1');
+      cell.classList.remove('player2');
+    });
+
+  })
 }
 
 takeTurn();
