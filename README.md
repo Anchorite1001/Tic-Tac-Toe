@@ -1,18 +1,17 @@
 <!-- understand paragraph by default. -->
 # Project#0 - Tic Tac Toe
 
-<!-- bullet point list + word styling -->
-## Overview
-* First project in General Assembly **Software Engineering Immersive**
-* Tic Tac Toe: 3x3 *gameboard* & 2 *players*
-* Html + CSS + Javascript
+<!-- anchor tag -->
+Have a try [here](https://anchorite1001.github.io/project0/). Comments and suggestions are welcome!
 
 <!-- img tag: ![alt-text](url) -->
 ![The window of this game](intropic.png)
 
-<!-- anchor tag -->
-Have a try [here](https://anchorite1001.github.io/project0/). Comments and suggestions are welcome!
-
+<!-- bullet point list + word styling -->
+## Overview
+* **Tic Tac Toe**: 3x3 gameboard & 2 players
+* Html + CSS + Javascript
+* First project in General Assembly *Software Engineering Immersive*
 <!-- documentations that need coding present:
 ```coding language(e.g. javascript)
 coding in between
