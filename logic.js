@@ -1,22 +1,23 @@
+
 const checkWin = function (arr) {
-  let winOccasion = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]];
+  let winOccasion = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]];//list the 8 winning situations
   let win = 0;
   for (i = 0; i < winOccasion.length; i++) {
     if (winOccasion[i].every (n => arr.includes(n))) {
-      win ++;
+      win ++;//check if one of the situations can be fulfilled by player's choices
       break
     }
   }
   if (win != 0) {
-    return true;//end the game when return true
+    return true;//win variable let we know if any player has already win the game.
   } else {
     return false;
   }
 }
 
-const draw = function () {
+const draw = function () {//draw situation:9 cells have all been chosen but no one wins.
   let chosen = game.player1.concat(game.player2);
-  if(game.choices.every(num => {return chosen.includes(num)}) && game.result.length === 0) {
+  if(chosen.length === 9 && game.result.length === 0) {
     game.result = "It's a draw!"
   }
 }//why directly compare player1+player2 with choices cannot work?
@@ -26,10 +27,10 @@ const game = {
   player1: [],
   player2: [],
 
-  player1Win: 0,
+  player1Win: 0,//store the winning record
   player2Win: 0,
 
-  turn: true,
+  turn: true,//change turns between players.
 
   result: "",
 

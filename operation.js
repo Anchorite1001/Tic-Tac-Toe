@@ -1,6 +1,6 @@
 
 
-const render = function () {
+const render = function () {//change the display of 2 players'records and current result on screen.
   const result = document.querySelector('#result');
   const record1 = document.querySelector('#record1');
   const record2 = document.querySelector('#record2');
@@ -18,13 +18,13 @@ const takeTurn = function () {
 
     if (game.result !== "") {
       return
-    }
+    }//end game when there is a result already.
 
     if (game.turn === true) {
       game.player1Move(choice);
-      cell.classList.add('sun');
+      cell.classList.add('sun');//add token and change record on screen
       render();
-      this.style.pointerEvents = 'none';//change it after restart
+      this.style.pointerEvents = 'none';//disable the eventlistener after the cell has been chosen.
     } else {
       game.player2Move(choice);
       cell.classList.add('moon');
@@ -40,7 +40,7 @@ const takeTurn = function () {
     game.player2 = [];
     game.result = "";
     render();
-    //clear all the tokens on gameboard
+    //clear all the tokens on gameboard & enable the disabled eventlistener.
     cells.forEach(cell => {
       cell.style.pointerEvents = "";
       cell.classList.remove('sun');
