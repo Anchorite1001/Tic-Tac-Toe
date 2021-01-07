@@ -15,7 +15,7 @@ body {
 container {
   max-width: 960px;
   margin: 0 auto;
-  padding: 30px;
+  padding: 50px;
 }
 
 h1 {
@@ -79,4 +79,20 @@ h1 {
 h2 {
   text-align:center;
   padding-top:20px;
+}
+
+.record {
+  display:block;
+  padding: 20px 50px;
+  position:relative;
+  text-align:left;
+}
+
+#record1, #record2 {
+  display: inline-block;
+}
+
+#record2 {
+  position:absolute;
+  right:50px;
 }

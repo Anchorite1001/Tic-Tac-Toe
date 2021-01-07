@@ -26,6 +26,9 @@ const game = {
   player1: [],
   player2: [],
 
+  player1Win: 0,
+  player2Win: 0,
+
   turn: true,
 
   result: "",
@@ -35,6 +38,7 @@ const game = {
     this.turn = !this.turn;
     if (checkWin(this.player1)) {
       this.result = 'Player1 wins!';
+      this.player1Win += 1;
     };
     draw()
   },
@@ -44,6 +48,7 @@ const game = {
     this.turn = !this.turn;
     if (checkWin(this.player2)) {
       this.result = 'Player2 wins!';
+      this.player2Win += 1;
     };
     draw();
   },
