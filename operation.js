@@ -5,8 +5,8 @@ const render = function () {
   const record1 = document.querySelector('#record1');
   const record2 = document.querySelector('#record2');
   result.innerHTML = game.result;
-  record1.innerHTML = `Player1: ${game.player1Win}`;
-  record2.innerHTML = `Player2: ${game.player2Win}`;
+  record1.innerHTML = `Player 1: ${game.player1Win}`;
+  record2.innerHTML = `Player 2: ${game.player2Win}`;
 }
 
 const takeTurn = function () {
@@ -22,12 +22,12 @@ const takeTurn = function () {
 
     if (game.turn === true) {
       game.player1Move(choice);
-      cell.classList.add('player1');
+      cell.classList.add('sun');
       render();
       this.style.pointerEvents = 'none';//change it after restart
     } else {
       game.player2Move(choice);
-      cell.classList.add('player2');
+      cell.classList.add('moon');
       render();
       this.style.pointerEvents = 'none';
     }
@@ -43,8 +43,8 @@ const takeTurn = function () {
     //clear all the tokens on gameboard
     cells.forEach(cell => {
       cell.style.pointerEvents = "";
-      cell.classList.remove('player1');
-      cell.classList.remove('player2');
+      cell.classList.remove('sun');
+      cell.classList.remove('moon');
     });
 
   })

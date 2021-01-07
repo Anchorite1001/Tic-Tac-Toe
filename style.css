@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap');
+
 * {
-  background-color:grey;
-  background-size:contain;
+  background-color:#230007;
   box-sizing:border-box;
 }
 
@@ -11,7 +12,6 @@ body {
 
 :root {
   --cell-size: 140px;
-  --token-size: 120px; //calculate the token size
 }
 
 container {
@@ -20,11 +20,49 @@ container {
   padding: 50px;
 }
 
+/* header */
+
 h1 {
-  text-align:center;
+  font-family:'Caveat Brush', sans-serif;
+  color:#D8A48F;
+  text-align: center;
   text-transform: uppercase;
-  padding-top:20px;
-  padding-bottom: 0px;
+  font-size:70px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+/* result part */
+
+.record {
+  display:block;
+  padding: 0 20px;
+  position:relative;
+  text-align:left;
+}
+
+#record1, #record2, #result {
+  display:inline-block;
+  margin:0;
+}
+
+#record1, #record2 {
+  font-family:'Caveat Brush', sans-serif;
+  color:#A53F2B;
+  font-size:40px;
+}
+
+#record2 {
+  position:absolute;
+  right:20px;
+}
+
+#result {
+  position:absolute;
+  left:43%;
+  font-family:'Caveat Brush', sans-serif;
+  color:#FBFFB9;
+  font-size:40px;
 }
 
 /* styling the game board */
@@ -32,16 +70,18 @@ h1 {
   width: 100%;
   height: 100%;
   display:grid;
-  justify-content:center; //let the cells centered
+  justify-content:center;
   align-content:center;
   grid-template-columns:repeat(3,auto);
   grid-template-rows:repeat(3,auto);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .cell {
   width: var(--cell-size);
   height: var(--cell-size);
-  border: 3px solid white;
+  border: 3px solid #C7CCDB;
   justify-content:center;
 }
 
@@ -83,37 +123,37 @@ h1 {
   margin:0 0;
 }
 
-/* result part */
-h2 {
-  text-align:center;
-  padding-top:20px;
+/* make the icon token */
+.cell.sun {
+  background-image: url('sun.png');
+  background-size:50%;
+  background-repeat:no-repeat;
+  background-position: center center;
 }
 
-.record {
-  display:block;
-  padding: 0 20px;
-  position:relative;
-  text-align:left;
+.cell.moon {
+  background-image: url('moon.png');
+  background-size:50%;
+  background-repeat:no-repeat;
+  background-position: center center;
 }
 
-#record1, #record2 {
-  display: inline-block;
-}
-
-#record2 {
-  position:absolute;
-  right:50px;
-}
-
+/* restart button */
 .restart {
   position:relative;
-  padding:0 20px;
-  width:75%;
-  margin:0 auto;
+  width:88%;
 }
 
 #restart {
   display:block;
   position:absolute;
-  left:45%;
+  left:50%;
+  width:150px;
+  height:50px;
+  background-color: #A53F2B;
+  font-family:'Caveat Brush', sans-serif;
+  font-size: 25px;
+  color:#C7CCDB;
+  border:none;
+  margin-top: 10px;
 }
